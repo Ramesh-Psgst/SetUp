@@ -1,13 +1,13 @@
-const {getCollection}= require('./connection');
+const {MongoClient} = require('mongodb');
 
-function insertPrgm(){
-    
-    const collection =getCollection("programCalendar");
-    // collection.insertOne({departmentId:id ,departmentName:name, programmeType:type , classtId:cId , className:cName , batchId:bId , academicStart:start ,
-    //     academicEnd:End });
-    collection.insertOne({departmentId:id });
+const client =  new MongoClient("mongodb://127.0.0.1:27017");
+client.connect()
+const database = client.db("Setup");
+const collection = database.collection("programCalendar")
 
 
+function insertPrgm(data){
+    collection.insertOne(data);
 }
 
 

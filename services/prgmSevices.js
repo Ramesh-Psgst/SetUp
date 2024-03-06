@@ -1,8 +1,6 @@
 const {insertPrgm} = require('../daos/prgmDao');
 
-function insertPrgmCal(req,res){
-    insertPrgm(req.body);
-    
-
+function insertPrgmCal(data){
+    insertPrgm(data);
 }
 module.exports={insertPrgmCal};
