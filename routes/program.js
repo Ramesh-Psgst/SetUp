@@ -37,9 +37,9 @@ router.put('/updateone/:id', async (req, res) => {
 //update many documents
 router.post('/updatemany', async(req, res)=>{
     try{
-        const target= req.body.batchYear;
-        const semester=req.body.semester;
-        await updateMany(semester, target);
+        const target= req.body.target;
+        const value=req.body.value;
+        await updateMany(value, target);
         res.send('updated');
 
     }
@@ -61,8 +61,8 @@ router.delete('/deleteone/:id', async(req, res)=>{
 //delete many records
 router.delete('/deletemany', async(req, res)=>{
     try{
-        const target= req.body.batchYear;
-           await deleteMany( req.body, target);
+        const target= req.body.target;
+           await deleteMany( target);
         res.send('record deleted sucessfully');
     }
     catch(err){

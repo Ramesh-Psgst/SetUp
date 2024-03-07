@@ -11,20 +11,20 @@ function insertPrgm(data) {
 function insertPrgms(data) {
     collection.insertMany(data);
 }
-
+ 
 async function updateOneDetail(data, query) {
     await collection.updateOne(query, { $set: data });
 }
 
-async function updateManyDetails(data, query){
-    await collection.updateMany(query,{$set:data});
+async function updateManyDetails(target, value){
+    await collection.updateMany(target,{$set:value});
 }
 
 async function deleteOneDetail(query){
     await collection.deleteOne(query);
 }
-async function deleteManyRecord( batchYear ){
-    collection.deleteMany(batchYear);
+async function deleteManyRecord( target ){
+    collection.deleteMany(target);
 }
 //db.student.updateMany({age:18},{$set:{eligible:"true"}})
 //db.getCollection('WorkLoad').updateMany({"batchYear":2023},{$set:{"semester":5}})

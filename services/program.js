@@ -12,19 +12,16 @@ async function updateOne(data, id) {
    await updateOneDetail(data, query);
 
 }
-async function updateMany(data, target){
-   const batchYear={"batchYear":target};
-   const semester={"semester":data};
-   await updateManyDetails(semester, batchYear);
+async function updateMany(value, target){
+   await updateManyDetails(target, value);
 }
 async function deleteOne(data, id){
    const query = { _id: ObjectID(id)};
    await deleteOneDetail(data, query);
 
 }
-async function deleteMany(data, target){
-   const batchYear={"batchYear":target};
-   await deleteManyRecord(data, batchYear);
+async function deleteMany(target){
+   await deleteManyRecord(target);
 }
 
 
